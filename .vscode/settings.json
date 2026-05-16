@@ -1,4 +1,47 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda"
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.extraPaths": [
+        "./backend"
+    ],
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false
+
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.parameterHints.enabled": true,
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "on",
+
+  "javascript.suggest.enabled": true,
+  "typescript.suggest.enabled": true,
+
+  "[javascript]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    }
+  },
+  "[javascriptreact]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    }
+  },
+  "[python]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": false
+    }
+  }
 }
