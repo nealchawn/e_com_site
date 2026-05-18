@@ -10,9 +10,10 @@ class CategoryModelTest(TestCase):
     self.assertEqual(category, 0)
 
 class ProductModelTest(TestCase):
-  #def test_build_name_slug_class_method(self):
-  #  result = Product.build_name_slug("4 pack Bulb", "electronics")
-  #  self.assertEqual(result, "4-pack-bulb-electronics")
+  def test_build_cool_name_class_method(self):
+    result = Product.build_cool_name("4 pack Bulb", "electronics")
+
+    self.assertEqual(result, "4-pack-bulb-electronics")
 
   def test_cool_name_instance_method(self):
     category = Category.objects.create(

@@ -26,7 +26,10 @@ class Product(models.Model):
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now_add=True)
 
-  #@classmethod
+  @classmethod
+  def build_cool_name(cls, name, category_slug):
+    return f"{slugify(name)}-{category_slug}"
+
   def cool_name(self):
     return f"{slugify(self.name)}-{self.category.slug}"
 
@@ -67,5 +70,4 @@ class OrderItem(models.Model):
 
   def __str__(self):
     return f"{self.quantity} x {self.product.name}"
-  
   
