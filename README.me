@@ -1,5 +1,15 @@
 Build a Django + React Ecommerce site.
 
+brew services start postgresql@14
+psql postgres
+CREATE ROLE postgres WITH LOGIN PASSWORD 'password';
+ALTER ROLE postgres SUPERUSER CREATEDB CREATEROLE;
+CREATE DATABASE ecommerce_db OWNER postgres;
+\l
+\q
+
+remove .pyc bytecode
+git ls-files | grep -E '(^|/)__pycache__/|\.py[cod]$' | xargs git rm --cached
 
 ----
 2. Goals
@@ -10,4 +20,9 @@ Build a Django + React Ecommerce site.
 - Tailwind CSS setup.
 
 
+
 reference Mohit Decodes
+---
+# allows me to push my headless branches to master
+gco origin/master
+git push origin HEAD:master
