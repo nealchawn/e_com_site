@@ -19,6 +19,44 @@ git ls-files | grep -E '(^|/)__pycache__/|\.py[cod]$' | xargs git rm --cached
 - Expose /api/products/ Admin/api/categories/ endpoints
 - Tailwind CSS setup.
 
+python manage.py makemigrations
+python manage.py migrate
+-- create db records via ui or shell
+
+python manage.py shell
+from store.models import *
+Category.objects.create(name="Electric",slug="electric")
+Category.objects.all().first().__dict__
+category = Category.objects.get(id=1)
+category.name = 'Electric1'
+category.save()
+
+category = Category.objects.filter(name__icontains="electric").first()
+
+if category is None:
+  raise ValueError("No category found matching 'electric'")
+
+image_path = Path("~/Pictures/4packbulbs.jpeg")
+
+product = Product.objects.create(
+  category=category,
+  name="4 pack Bulb",
+  description="4 pack of Bulb 60 W",
+  price=Decimal("7.00"),
+)
+
+with image_path.open("rb") as f:
+  product.image.save(image_path.name, File(f), save=True)
+
+
+from django.forms.models import model_to_dict
+model_to_dict(category)
+
+
+# change migration url to image
+# use conda install Pillow
+python backend/manage.py makemigrations
+python backend/manage.py migrate
 
 
 reference Mohit Decodes
