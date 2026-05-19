@@ -1,47 +1,41 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.extraPaths": [
-        "./backend"
-    ],
+  "python-envs.defaultEnvManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "ms-python.python:conda",
+
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.detectIndentation": false
+  "editor.detectIndentation": false,
 
+  "editor.inlineSuggest.enabled": true,
   "editor.quickSuggestions": {
-    "other": true,
+
+    "other": "inline",
     "comments": false,
     "strings": false
   },
   "editor.suggestOnTriggerCharacters": true,
   "editor.parameterHints.enabled": true,
-  "editor.snippetSuggestions": "top",
-  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "bottom",
+  "editor.tabCompletion": "off",
+
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.extraPaths": [
+    "./backend"
+  ],
 
   "javascript.suggest.enabled": true,
   "typescript.suggest.enabled": true,
 
-  "[javascript]": {
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": false,
-      "strings": false
-    }
-  },
-  "[javascriptreact]": {
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": false,
-      "strings": false
-    }
-  },
-  "[python]": {
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": false,
-      "strings": false
-    }
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "python": false,
+    "javascript": true,
+    "javascriptreact": true,
+    "typescript": true,
+    "typescriptreact": true
   }
 }
