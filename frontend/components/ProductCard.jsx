@@ -1,8 +1,10 @@
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 function ProductCard({product}) {
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-lg">
       <img
-      src = {product.image}
+      src = {`${BASE_URL}${product.image}`}
       alt = {product.name}
       className="w-full h-56 object-cover rounded-lg mb-4"
       />
